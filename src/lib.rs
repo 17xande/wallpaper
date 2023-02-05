@@ -14,11 +14,11 @@ pub fn change_wallpaper(path: PathBuf) {
 
         let dw: IDesktopWallpaper = CoCreateInstance(&DesktopWallpaper, None, CLSCTX_ALL).unwrap();
         let m_count = dw.GetMonitorDevicePathCount().unwrap();
-        println!("detected {} monitors.", m_count);
+        // println!("detected {} monitors.", m_count);
 
         for i in 0..m_count {
             let mdp = dw.GetMonitorDevicePathAt(i).unwrap();
-            println!("monitor device path: {}", mdp.to_string().unwrap());
+            // println!("monitor device path: {}", mdp.to_string().unwrap());
             let monitor_id = PCWSTR(mdp.as_ptr());
             dw.SetWallpaper(monitor_id, img).unwrap();
         }

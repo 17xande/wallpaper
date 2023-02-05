@@ -6,6 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+[dependencies.unsplash]
+path = "../unsplash"
+
 [dependencies.windows]
 version = "0.44.0"
 features = [
